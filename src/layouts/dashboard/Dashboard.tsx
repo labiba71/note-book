@@ -54,7 +54,11 @@ export const DashboardComponent = (props: DashboardProps) => {
   const [searchFavorites, setSearchFavorites] = useState(false);
 
   const handleClickOpen = () => {
-    if (props.noteList.length <= 30) setOpen(true);
+    if (props.noteList.length <= 30) {
+      setOpen(true)
+    } else {
+      alert('You cannot add more than 30 notes')
+    };
   };
   const handleClickStarOpen = () => {
     setSearchFavorites(!searchFavorites);
