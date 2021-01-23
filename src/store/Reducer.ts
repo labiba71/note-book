@@ -18,7 +18,7 @@ const InitialState = {
   note: [{}],
 };
 
-export const rootReducer = (state = InitialState, action: any) => {
+export const rootReducer: any = (state = InitialState, action: any) => {
   switch (action.type) {
     case ADD_NOTE:
       return {
@@ -28,7 +28,7 @@ export const rootReducer = (state = InitialState, action: any) => {
     case EDIT_NOTE:
       return {
         ...state,
-        note: state.note.map((singleNote:any) => {
+        note: state.note.map((singleNote: any) => {
           if (action.payload.id === singleNote.id) {
             return {
               ...singleNote,

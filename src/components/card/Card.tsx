@@ -23,7 +23,7 @@ const useStyles =
       width: '20rem',
       height: '14rem',
       textAlign: "left",
-      backgroundColor: (props: { note: { color: string } }) => props.note.color,
+      backgroundColor: (props: { note: { color: string } }) => props.note && props.note.color,
       margin: "10px"
     },
     media: {
@@ -77,7 +77,7 @@ const CardDetailsComponent = (props: CardProps) => {
 
   return (
     <>
-      <Card className={classes.root}>
+      {props.note && <Card className={classes.root}>
         <CardHeader
           action={
             <IconButton aria-label="star" >
@@ -111,7 +111,7 @@ const CardDetailsComponent = (props: CardProps) => {
             </IconButton>
           </div>
         </CardActions>
-      </Card>
+      </Card>}
       <Dialog
         open={open}
         onClose={handleClose}

@@ -40,7 +40,7 @@ export const StarList = (props: DashboardProps) => {
       {props && props.noteList
         .filter((item: Note) => item.star === true)
         .map((filteredNotes: Note) => (
-          <div key={filteredNotes.id}>
+          <div key={filteredNotes && filteredNotes.id}>
             <CardComponent note={filteredNotes} />
           </div>
         ))}
@@ -112,14 +112,14 @@ export const DashboardComponent = (props: DashboardProps) => {
                     !item.title.toLowerCase().indexOf(searchNotes.toLowerCase())
                 )
                 .map((filteredNotes: Note) => (
-                  <div key={filteredNotes.id}>
+                  <div key={ filteredNotes && filteredNotes.id}>
                     <CardComponent note={filteredNotes} />
                   </div>
                 ))
             ) : (
                   props.noteList.map((note: Note) => {
                     return (
-                      <div key={note.id}>
+                      <div key={note && note.id}>
                         <CardComponent note={note} />
                       </div>
                     );
