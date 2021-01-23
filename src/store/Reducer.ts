@@ -15,7 +15,7 @@ export interface Note {
   date: Date;
 }
 const InitialState = {
-  note: [{}],
+  note: [],
 };
 
 export const rootReducer: any = (state = InitialState, action: any) => {
