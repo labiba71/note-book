@@ -26,6 +26,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     borderRadius: "50%",
     color: "black",
     margin: "1rem",
+    cursor: "pointer"
   },
 }));
 
@@ -79,7 +80,7 @@ export const DashboardComponent = (props: DashboardProps) => {
             fontSize="large"
             onClick={handleClickStarOpen}
           />
-          <AddCircleRoundedIcon fontSize="large" onClick={handleClickOpen} />
+          <AddCircleRoundedIcon style={{cursor: "pointer"}} fontSize="large" onClick={handleClickOpen} />
         </div>
         <div className="dashboard-maincontent">
           <div className={classes.margin}>
